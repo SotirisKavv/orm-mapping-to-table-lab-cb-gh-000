@@ -27,8 +27,8 @@ class Student
                                   AND grade = ?;", @name, @grade)[0][0]
   end
 
-  def self.create(name, grade)
-    student = Student.new(name, grade)
+  def self.create(hash)
+    student = Student.new(hash[:name], hash[:grade])
     student.save
     student
   end
